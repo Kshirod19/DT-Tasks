@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
+    <title>Task 1</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav
+      class="w-full bg-[#F0F0F0] shadow-md box-border fixed top-0 left-0 z-10"
+    >
+      <div
+        class="w-full max-w-6xl mx-auto flex justify-between items-center py-4"
+      >
+        <!-- Logo -->
+        <div class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="190"
+            height="30"
+            viewBox="0 0 190 30"
+            fill="none"
+          >
+            <circle cx="15" cy="15" r="15" fill="#0029FF" />
+            <circle cx="8.5" cy="14.5" r="1.5" fill="white" />
+            <circle opacity="0.1" cx="9.5" cy="10.5" r="1.5" fill="white" />
+            <circle opacity="0.1" cx="9.5" cy="18.5" r="1.5" fill="white" />
+            <circle opacity="0.1" cx="21.5" cy="18.5" r="1.5" fill="white" />
+            <circle opacity="0.1" cx="21.5" cy="10.5" r="1.5" fill="white" />
+            <circle cx="12.5" cy="21.5" r="1.5" fill="white" />
+            <circle cx="18.5" cy="21.5" r="1.5" fill="white" />
+            <circle cx="22.5" cy="14.5" r="1.5" fill="white" />
+            <circle cx="15.5" cy="14.5" r="1.5" fill="white" />
+            <circle cx="18.5" cy="7.5" r="1.5" fill="white" />
+            <circle cx="12.5" cy="7.5" r="1.5" fill="white" />
+            <path d="M8.5 14.5H15.5L18.5 21.5H12.5" stroke="white" />
+            <path d="M12.5 7.5H18.5" stroke="white" />
+            <path
+              d="M45.88 8.06H41.54V22H45.88C50.46 22 53.28 19.38 53.28 15.06C53.28 10.74 50.46 8.06 45.88 8.06ZM43.36 20.5V9.54H45.88C49.52 9.54 51.42 11.66 51.42 15.06C51.42 18.46 49.52 20.5 45.88 20.5H43.36ZM63.1806 8.04H55.6806V22H63.1806V20.5H57.5006V15.7H62.5806V14.2H57.5006V9.54H63.1806V8.04ZM73.4345 8.04H65.9345V22H73.4345V20.5H67.7545V15.7H72.8345V14.2H67.7545V9.54H73.4345V8.04ZM78.0084 14.68V9.56H80.6884C82.7684 9.56 83.6484 10.52 83.6484 12.14C83.6484 13.7 82.7684 14.68 80.6884 14.68H78.0084ZM85.5084 12.14C85.5084 9.86 83.9684 8.06 80.6884 8.06H76.1884V22H78.0084V16.18H80.6884C84.1484 16.18 85.5084 14.26 85.5084 12.14Z"
+              fill="black"
+            />
+            <path
+              d="M92.0425 10.7H95.7625V22H99.1825V10.7H102.903V7.96H92.0425V10.7ZM113.359 22H116.779V7.96H113.359V13.46H108.039V7.96H104.619V22H108.039V16.22H113.359V22ZM133.068 14.94C133.068 10.72 129.888 7.76 125.888 7.76C121.908 7.76 118.668 10.72 118.668 14.94C118.668 19.16 121.908 22.14 125.888 22.14C129.868 22.14 133.068 19.16 133.068 14.94ZM122.168 14.94C122.168 12.44 123.608 10.86 125.888 10.86C128.128 10.86 129.588 12.44 129.588 14.94C129.588 17.4 128.128 19.02 125.888 19.02C123.608 19.02 122.168 17.4 122.168 14.94ZM134.91 16.34C134.91 20.22 137.45 22.14 140.71 22.14C143.95 22.14 146.67 20.22 146.67 16.34V7.96H143.25V16.36C143.25 18.02 142.39 18.98 140.77 18.98C139.15 18.98 138.33 18.02 138.33 16.36V7.96H134.91V16.34ZM155.632 7.8C151.432 7.8 148.492 10.76 148.492 14.96C148.492 19.16 151.452 22.1 155.652 22.1C159.352 22.1 161.692 19.68 162.412 17.26V14.08H154.972V16.6H159.312C158.792 18.18 157.612 19.08 155.912 19.08C153.452 19.08 151.972 17.56 151.972 14.96C151.972 12.52 153.432 10.96 155.632 10.96C156.912 10.96 157.872 11.46 158.392 12.4H162.172C161.432 9.52 158.992 7.8 155.632 7.8ZM173.046 22H176.466V7.96H173.046V13.46H167.726V7.96H164.306V22H167.726V16.22H173.046V22ZM178.175 10.7H181.895V22H185.315V10.7H189.035V7.96H178.175V10.7Z"
+              fill="#0029FF"
+            />
+          </svg>
+        </div>
+        <!-- Icons -->
+        <div class="flex space-x-4 items-center">
+          <button class="text-gray-700 hover:text-blue-600">
+            <img src="./images/home.png" alt="Home" class="w-6 h-6" />
+          </button>
+          <button class="text-gray-700 hover:text-blue-600">
+            <img src="./images/setting.png" alt="Settings" class="w-6 h-6" />
+          </button>
+          <button class="text-gray-700 hover:text-blue-600">
+            <img
+              src="./images/notification.png"
+              alt="Notifications"
+              class="w-6 h-6"
+            />
+          </button>
+          <button class="text-gray-700 hover:text-blue-600">
+            <img
+              src="https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM="
+              alt="Notifications"
+              class="w-6 h-6 rounded-full"
+            />
+          </button>
+          <button class="text-gray-700 hover:text-blue-600">
+            <div class="space-y-1">
+              <div
+                class="w-[3px] h-[3px] bg-[#3683F0] hover:text-blue-600 rounded-full mx-auto"
+              ></div>
+              <div
+                class="w-[3px] h-[3px] bg-[#3683F0] hover:text-blue-600 rounded-full mx-auto"
+              ></div>
+              <div
+                class="w-[3px] h-[3px] bg-[#3683F0] hover:text-blue-600 rounded-full mx-auto"
+              ></div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div
+      id="sidebar"
+      class="fixed 2xl:left-[22%] 2xl:top-[15%] lg:left-0 lg:top-[15%] flex h-[500px] w-[100px] border overflow-hidden rounded-tr-3xl shadow-xl transition-all duration-300 flex-col z-20 bg-white"
+    >
+      <div class="bg-black px-5 py-2 flex justify-end h-max w-full">
+        <button onclick="toggleSidebar()">
+          <img
+            id="sidebar-icon"
+            src="./images/Sidebar arrow.png"
+            alt="Toggle Sidebar"
+            class="h-5 transition-transform duration-300"
+          />
+        </button>
+      </div>
+
+      <!-- Sidebar Content -->
+      <div id="sidebar-content" class="hidden px-5 py-2 bg-white">
+        <ul>
+          <li class="font-semibold text-base mb-2">
+            Explore the world of management
+          </li>
+          <li class="sidebar-item">Technical Project Management</li>
+          <li class="sidebar-item">Threadbuild</li>
+          <li class="sidebar-item">Structure your pointers</li>
+          <li class="sidebar-item">4SA Method</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div
+      id="overlay"
+      class="hidden fixed inset-0 bg-black bg-opacity-30 z-10"
+      onclick="toggleSidebar()"
+    ></div>
+
+    <!-- JavaScript to toggle sidebar visibility -->
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const sidebarContent = document.getElementById("sidebar-content");
+        const sidebarIcon = document.getElementById("sidebar-icon");
+        const overlay = document.getElementById("overlay");
+        const sidebarItems = document.querySelectorAll(".sidebar-item");
+
+        // Toggle sidebar width and visibility of content
+        if (sidebar.classList.contains("w-[100px]")) {
+          sidebar.classList.remove("w-[100px]");
+          sidebar.classList.add("w-[300px]");
+          sidebarContent.classList.remove("hidden");
+          sidebarIcon.style.transform = "rotate(180deg)"; // Rotate icon
+          overlay.classList.remove("hidden");
+
+          // Add active dots
+          sidebarItems.forEach((item) => {
+            item.innerHTML = `• ${item.textContent.trim()}`;
+          });
+        } else {
+          sidebar.classList.remove("w-[300px]");
+          sidebar.classList.add("w-[100px]");
+          sidebarContent.classList.add("hidden");
+          sidebarIcon.style.transform = "rotate(0deg)"; // Reset rotation
+          overlay.classList.add("hidden");
+
+          // Remove active dots
+          sidebarItems.forEach((item) => {
+            item.innerHTML = item.textContent.replace("• ", "");
+          });
+        }
+      }
+    </script>
+
+    <!-- Add background content to visualize overlapping -->
+   
+
+    <style>
+      .bg-content {
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Prevent scrolling when overlay is active */
+      body.no-scroll {
+        overflow: hidden;
+      }
+    </style>
+
+    <!-- Notice Board -->
+    <div
+      class="fixed 2xl:right-[22%] 2xl:top-[10%] lg:right-[0%] lg:top-[10%] flex h-max w-max"
+    >
+      <div
+        class="bg-black flex flex-col items-center gap-2 p-4 rounded-l-full shadow-lg"
+      >
+        <p class="text-white text-xl">&times;</p>
+        <h1 class="flex flex-col items-center text-white">
+          <span>N</span>
+          <span>o</span>
+          <span>t</span>
+          <span>i</span>
+          <span>c</span>
+          <span>e</span>
+          <span>B</span>
+          <span>o</span>
+          <span>a</span>
+          <span>r</span>
+          <span>d</span>
+        </h1>
+      </div>
+      <div class="w-10 shadow-lg border bg-white"></div>
+    </div>
+    <div class="w-full max-w-6xl mx-auto">
+      <!-- Content -->
+      <div class="w-full h-auto flex flex-col px-40 py-10 gap-5 mt-10">
+        <div class="flex w-full justify-between">
+          <h1 class="text-[#0029FF] font-bold text-2xl">
+            Technical Project Management
+          </h1>
+          <button
+            class="bg-[#0029FF] px-4 py-1 rounded-lg text-[#FFFFFF] text-xs font-medium"
+          >
+            Sumbit task
+          </button>
+        </div>
+        <div
+          class="w-full flex flex-col items-start p-5 bg-[#E9ECEF] gap-2 rounded-md"
+        >
+          <h1 class="text-black font-bold text-xl">
+            Explore the world of management
+          </h1>
+          <p class="text-black font-normal text-sm">
+            As a project manager, you play an important reole in leading a
+            project through initiation, planning, execution, monitoring,
+            controlling and completion. How? Do you want to manage each and
+            every step of your life?
+          </p>
+        </div>
+      </div>
+      <!-- boxcontainer -->
+      <div class="w-full flex flex-wrap justify-center gap-20 p-10">
+        <!-- box1 -->
+        <section
+          class="h-[480px] w-[380px] rounded-xl bg-[#FDFDFD] border-2 shadow-md overflow-hidden"
+        >
+          <div class="bg-black">
+            <h1 class="text-white font-semibold text-sm py-3 text-center">
+              Technical Project Management
+            </h1>
+          </div>
+          <div class="flex gap-2 px-5 py-3">
+            <p class="text-black font-normal text-sm">
+              <span class="font-semibold font-sans">Description : </span>
+              Story of Alignment Scope of Agility Specific Accountable
+              Staggering Approach
+            </p>
+          </div>
+          <div>
+            <img
+              src="https://s3-alpha-sig.figma.com/img/f0ce/9cbc/d249ba0bf29d70044ae2a5bb2114b8ff?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UNal10ue5B8vhCKRMAg4QcY-SHWzg7oNobMkG~3i1ys-mCthZUHhc5M-YOp0hsBz41he9Arx54rcwefU7~7Lfjfh7112hCqfELduS-R4wOYvNQmanBRKzeJwJXOB0VKzb9XtmPtBBSoKQqxuwayMJVTsigr7~4V6DZwzdsbIcV~WhxHaPgZZa6v~wkEzQhxh-kq-TJqLO3D3v~5MPviXRdLd-vpvYrazrNQy2VPsMeptLkexQxZcbX5b3kvyZBIvrLBIhC-7gyJGUrod2FIN7aU~8JM-OHFwiDgaOgsG7JqegW6JHgzU~soTnrxm-NJeqX38yR0kku-QLk2QhSX2Nw__"
+              alt=""
+            />
+          </div>
+        </section>
+        <!-- box2 -->
+        <section
+          class="h-[480px] w-[380px] rounded-xl bg-[#FDFDFD] border-2 shadow-md overflow-hidden"
+        >
+          <div class="bg-black">
+            <h1 class="text-white font-semibold text-sm py-3 text-center">
+              Threadbuild
+            </h1>
+          </div>
+          <div class="flex gap-2 px-5 py-3 border">
+            <p class="text-black font-normal text-sm">
+              <span class="font-semibold font-sans">Description : </span>Watch
+              the video and threadbuild, and jot out key threads while watching
+              the video
+            </p>
+          </div>
+          <div
+            class="bg-[#FEFFC033] w-full py-2 px-5 flex justify-start items-center gap-10"
+          >
+            <img src="./images/aerrow.png" alt="img" />
+            <h1 class="font-bold text-xl">Thread A</h1>
+          </div>
+          <div class="flex w-full justify-between py-3 px-5">
+            <div class="relative">
+              <h1
+                class="font-normal p-2 text-xs bg-[#0000000D] h-16 w-40 rounded-xl shadow-lg"
+              >
+                Sub thread 1
+              </h1>
+              <input
+                type="text"
+                placeholder="Enter Text here"
+                class="text-[#6C757D] font-normal p-2 text-xs h-16 w-40 outline-none rounded-xl shadow-lg absolute top-1/2"
+              />
+            </div>
+            <div class="relative">
+              <h1
+                class="font-normal p-2 text-xs bg-[#0000000D] h-16 w-40 rounded-xl shadow-lg"
+              >
+                Sub thread 1
+              </h1>
+              <input
+                type="text"
+                placeholder="Enter Text here"
+                class="text-[#6C757D] font-normal p-2 text-xs h-16 w-40 outline-none rounded-xl shadow-lg absolute top-1/2"
+              />
+            </div>
+          </div>
+          <div
+            class="mt-5 py-3 px-6 flex justify-end items-center w-full gap-3"
+          >
+            <img src="./images/one.png" alt="img" />
+            <img src="./images/two.png" alt="img" />
+            <img src="./images/three.png" alt="img" />
+            <img src="./images/four.png" alt="img" />
+
+            <div
+              class="flex items-center justify-center gap-1 border shadow-md px-1 py-2"
+            >
+              <h1 class="text-[10px] font-semibold">Select Categ</h1>
+              <img src="./images/downarrow.png" alt="img" />
+            </div>
+            <div
+              class="flex items-center justify-center gap-1 border shadow-md px-1 py-2"
+            >
+              <h1 class="text-[10px] font-semibold">Select Proces</h1>
+              <img src="./images/downarrow.png" alt="img" />
+            </div>
+          </div>
+          <div class="w-full px-5">
+            <button
+              class="text-xs font-medium bg-[#0029FF] py-2 px-3 text-white rounded-xl"
+            >
+              + Sub-thread
+            </button>
+            <div class="relative">
+              <h1
+                class="font-normal p-2 text-xs bg-[#0000000D] h-16 w-full rounded-xl shadow-lg mt-3"
+              >
+                Summary for Thread A
+              </h1>
+              <input
+                type="text"
+                placeholder="Enter Text here"
+                class="text-[#6C757D] font-normal p-2 text-xs h-16 w-full outline-none rounded-xl shadow-lg absolute top-1/2"
+              />
+            </div>
+          </div>
+        </section>
+        <!-- box3 -->
+        <section
+          class="h-[480px] w-[380px] rounded-xl bg-[#FDFDFD] border-2 shadow-md overflow-hidden"
+        >
+          <div class="bg-black">
+            <h1 class="text-white font-semibold text-sm py-3 text-center">
+              Structure your Pointers
+            </h1>
+          </div>
+          <div class="flex gap-2 py-3 px-5">
+            <p class="text-black font-normal text-sm bg-[#FDFDFD]">
+              <span class="font-semibold font-sans">Description : </span>Write a
+              300 - 400 word article from your thread . Publish your
+              understanding and showcase your understanding to the entire world
+            </p>
+          </div>
+          <div class="w-full px-5 pt-5 border flex flex-col gap-7 bg-[#FDFDFD]">
+            <div class="flex flex-col gap-4">
+              <h1 class="text-base font-medium">Title</h1>
+              <input
+                type="text"
+                class="shadow-md w-full p-2 rounded-md bg-[#FCFBFB]"
+              />
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <h1 class="text-base font-medium">Content</h1>
+              <div class="flex flex-col">
+                <div
+                  class="text-xs flex flex-wrap gap-3 p-4 bg-[#FCFBFB] justify-start items-center shadow-lg"
+                >
+                  <span>File</span>
+                  <span>Edit</span>
+                  <span>View</span>
+                  <span>Insert</span>
+                  <span>Format</span>
+                  <span>Tools</span>
+                  <span>Table</span>
+                  <span>Help</span>
+                  <img src="./images//left.png" alt="img" />
+                  <img src="./images//right.png" alt="img" />
+                  <img src="./images//expand.png" alt="img" />
+                  <span class="bg-[#EBEBEB] pr-8">Paragraph</span>
+                  <span class="font-black text-xs">...</span>
+                </div>
+                <div>
+                  <textarea
+                    name="textarea"
+                    id="textarea"
+                    class="shadow-md w-full p-2 bg-[#FCFBFB] outline-none h-10"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- box4 -->
+        <section
+          class="h-[480px] w-[380px] rounded-xl bg-[#FDFDFD] border-2 shadow-md overflow-hidden box-border"
+        >
+          <div class="bg-black">
+            <h1 class="text-white font-semibold text-sm py-3 text-center">
+              4SA Method
+            </h1>
+          </div>
+          <div class="flex gap-2 py-3 px-5">
+            <p class="text-black font-normal text-sm">
+              <span class="font-semibold font-sans">Description : </span>To
+              Explore more read more
+            </p>
+          </div>
+          <div class="w-full px-5 flex-col gap-5">
+            <div
+              class="bg-[#F2F2F2] w-full flex justify-start items-center gap-2 py-2 px-5"
+            >
+              <img src="./images/aerrow.png" alt="img" />
+              <h1 class="font-semibold text-base">Introduction</h1>
+            </div>
+            <div class="pl-3 py-4 gap-5 flex flex-col">
+              <h1 class="font-normal text-xs">
+                The 4SA Method , How to bring a idea into progress ?
+              </h1>
+              <p class="text-[#606161] text-xs justify-end flex">See More</p>
+            </div>
+            <div
+              class="border w-full flex justify-start items-center gap-2 py-2 px-5"
+            >
+              <img src="./images/aerrow.png" alt="img" />
+              <h1 class="font-semibold text-base">Thread A</h1>
+            </div>
+            <div class="pl-3 py-4 gap-5 flex flex-col">
+              <h1 class="font-normal text-xs">
+                How are you going to develop your stratergy ? Which method are
+                you going to use to develop a stratergy ? What if the project is
+                lengthy?
+              </h1>
+              <p class="text-[#606161] text-xs justify-end flex">See More</p>
+            </div>
+            <div
+              class="w-full flex flex-col justify-start items-center gap-2 py-2 pr-5 pl-10"
+            >
+              <h1 class="font-semibold text-base px-3 py-2 border w-full">
+                Thread A
+              </h1>
+              <p class="text-xs font-normal">
+                You have a concept , How will you put into progress?
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div
+      class="flex flex-col gap-5 items-end max-w-6xl w-full mx-auto fixed bottom-0 lg:right-[1%] 2xl:right-[22%] z-10 p-5"
+    >
+      <img
+        src="./images//question-mark.png"
+        alt="img"
+        class="bg-[#0029FF] rounded-full p-2 h-10 w-10"
+      />
+      <img
+        src="./images/meeting.png"
+        alt="img"
+        class="bg-[#0029FF] rounded-full p-2 h-10 w-10"
+      />
+      <img
+        src="./images/schedule.png"
+        alt="img"
+        class="bg-[#0029FF] rounded-full p-2 h-10 w-10"
+      />
+    </div>
+  </body>
+</html>
